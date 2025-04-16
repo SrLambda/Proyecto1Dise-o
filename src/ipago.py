@@ -20,10 +20,10 @@ class Transferencia(IPago):
 
 class Tarjeta(IPago):
     def __init__(self, numero_hash: str, tipo: str, nombre_titular: str, fecha_expiracion: str):
-        self.numero_hash = numero_hash
-        self.tipo = tipo
-        self.nombre_titular = nombre_titular
-        self.fecha_expiracion = fecha_expiracion
+        self.__numero_hash = numero_hash
+        self.__tipo = tipo
+        self.__nombre_titular = nombre_titular
+        self.__fecha_expiracion = fecha_expiracion
 
     def realizar_cobro(self) -> bool:
         print(f"Pago realizado con tarjeta {self.tipo}.")
@@ -32,9 +32,9 @@ class Tarjeta(IPago):
 
 class Seguro(IPago):
     def __init__(self, num_poliza: str, aseguradora: str, porcentaje_cobertura: float):
-        self.num_poliza = num_poliza
-        self.aseguradora = aseguradora
-        self.porcentaje_cobertura = porcentaje_cobertura
+        self.__num_poliza = num_poliza
+        self.__aseguradora = aseguradora
+        self.__porcentaje_cobertura = porcentaje_cobertura
 
     def realizar_cobro(self) -> bool:
         print("Pago realizado mediante seguro.")

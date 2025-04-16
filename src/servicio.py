@@ -1,9 +1,10 @@
+from typing import List
 class Servicio:
     def __init__(self, nombre: str, codigo: str, descripcion: str,
-                 costo: int, duracion: int, restriccion: str):
-        self.nombre = nombre
-        self.codigo = codigo
-        self.descripcion = descripcion
-        self.costo = costo
-        self.duracion = duracion
-        self.restriccion = restriccion
+                 costo: int, duracion: int):
+        self.__nombre = nombre
+        self.__codigo = codigo
+        self.__descripcion = descripcion
+        self.__costo = costo
+        self.__duracion = duracion
+        self.__restriccion = List[str] = []

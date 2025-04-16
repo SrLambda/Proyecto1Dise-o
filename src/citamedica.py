@@ -12,17 +12,12 @@ class CitaMedica:
         CANCELADA = "Cancelada"
 
     def __init__(self, fecha: str, hora: str, motivo: str, mascota: Mascota, veterinario: Veterinario):
-        self.fecha = fecha
-        self.hora = hora
-        self.motivo = motivo
-        self.estado = EstadoCita.PENDIENTE
-        self.mascota = mascota
-        self.veterinario = veterinario
-        self.servicios: List[Servicio] = []
-        self.pagos: List[IPago] = []
+        self.__fecha = fecha
+        self.__hora = hora
+        self.__motivo = motivo
+        self.__estado = EstadoCita.PENDIENTE
+        self.__mascota = mascota
+        self.__veterinario = veterinario
+        self.__servicios: List[Servicio] = []
+        self.__pagos: List[IPago] = []
 
-    def validar_disponibilidad_vet(self) -> bool:
-        return self.veterinario.comprobar_disponibilidad(self.fecha, self.hora)
-
-    def agregar_servicio(self, servicio: Servicio):
-        self.servicios.append(servicio)
